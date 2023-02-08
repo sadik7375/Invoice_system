@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invoice system</title>
+
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <style>
+        @media print {
+            .btn {
+                display: none;
+            }
+            .Noprint {
+                display: none;
+            }
+            .form-control {
+                border: 0px;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+
+
+
+
+
+    <div class="container">
+
+
+        <div class="card">
+            <div class="card-header">
+                <h4>INVOICE</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                            <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Address</span>
+                            <input type="text" class="form-control" placeholder="Address">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Phone Number</span>
+                            <input type="text" class="form-control" placeholder="Phone number">
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Invoice No.</span>
+                            <input type="text" class="form-control" placeholder="Invoice No.">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Date</span>
+                            <input type="date" class="form-control" placeholder="Date">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+            <table class="table table-bordered">
+                <thead class="table-info">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ITEMS</th>
+                        <th scope="col" class="text-end">Quantity</th>
+                        <th scope="col" class="text-end">Price</th>
+                        <th scope="col" class="text-end">Amount</th>
+                        <th scope="col" class="NoPrint">
+                            <button type="button" class="btn btn-sm btn-success" onclick="BtnAdd()">Add Item</button>
+
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody id="TBody">
+                    <tr id="TRow">
+                        <th scope="row">1</th>
+                        <td><input type="text" class="form-control"></td>
+                        <td><input type="number" class="form-control text-end" name="qty" onchange="Calc(this);"></td>
+                        <td><input type="number" class="form-control text-end" name="rate" onchange="Calc(this);"></td>
+                        <td><input type="number" class="form-control text-end" name="amt" disabled></td>
+                        <td class="NoPrint"><button type="button" class="btn btn-sm btn-danger" onclick="BtnDel(this)">X</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <div class="row">
+
+                <div class="col-8">
+                    <button type="button" class="btn btn-primary" onclick="GetPrint()">print</button>
+
+                </div>
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Total</span>
+                        <input type="text" class="form-control" placeholder="Total" id="Ftotal" name="Ftotal" disabled>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Tax</span>
+                        <input type="text" class="form-control" placeholder="Tax" id="Ftax" name="Ftax" onchange="GetTotal()">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Net Amount</span>
+                        <input type="text" class="form-control" id="Fnet" name="Fnet" placeholder="Net Amount" disabled>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js " integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN " crossorigin="anonymous "></script>
+</body>
+
+</html>
