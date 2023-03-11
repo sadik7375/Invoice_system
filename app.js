@@ -22,7 +22,7 @@ function BtnDel(v) {
 function Calc(v) {
 
     var index = $(v).parent().parent().index();
-    var qty = document.getElementsByName("qty")[index].value;
+    var qty = document.getElementsByName("qty")[index].value; /*gEByName target collection of nodes(array like) by index number*/
 
 
     var rate = document.getElementsByName("rate")[index].value;
@@ -38,7 +38,8 @@ function Calc(v) {
 function GetTotal() {
     var sum = 0;
 
-    var amts = document.getElementsByName("amt");
+    var amts = document.getElementsByName("amt"); /*work like a array*/
+
     for (let index = 0; index < amts.length; index++) {
         var amt = amts[index].value;
         sum = +(sum) + +(amt);
